@@ -5,8 +5,8 @@ import java.awt.*;
 public class MainFrame extends JFrame {
 
     private Textpanel textPanel;
-    private JButton btn;
     private Toolbar toolbar;
+    private FormPanel formPanel;
 
     public MainFrame(){
         super("Hello World");
@@ -18,6 +18,7 @@ public class MainFrame extends JFrame {
 
         toolbar = new Toolbar();
         textPanel = new Textpanel();
+        formPanel = new FormPanel();
 
         toolbar.setStringListener(new StringListener() {
             @Override
@@ -25,7 +26,7 @@ public class MainFrame extends JFrame {
                 textPanel.appendText(text);
             }
         });
-
+        add(formPanel,BorderLayout.WEST);
         add(toolbar, BorderLayout.NORTH);
         add(textPanel, BorderLayout.CENTER);
 
